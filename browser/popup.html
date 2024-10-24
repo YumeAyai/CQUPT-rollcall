@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Sign in</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+      min-width: 220px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    #optionSelect {
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    #generateButton {
+      margin: 10px 0;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    #generateButton:hover {
+      background-color: #45a049;
+    }
+
+    #Container {
+      margin-top: 10px;
+    }
+  </style>
+  <script src="popup.js"></script>
+</head>
+
+<body>
+  <h2>Select a course:</h2>
+  <select id="optionSelect">
+    <!-- Options will be dynamically populated -->
+  </select>
+  <br>
+  <button id="generateButton">Sign in</button>
+  <div id="Container"></div>
+</body>
+
+</html>
