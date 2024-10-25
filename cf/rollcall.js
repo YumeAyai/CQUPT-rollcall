@@ -115,13 +115,12 @@ async function qrCodeSignIn(headers, courseId, rollcallId) {
             console.log("二维码数据:", qrCodeData);
             const signInUrl = `http://lms.tc.cqupt.edu.cn/api/rollcall/${rollcallId}/answer_qr_rollcall`;
             const body = JSON.stringify({
-                data: qrCodeData,
+                data: qrCodeData.data,
                 deviceId: ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
                     (c ^ crypto.randomBytes(1)[0] & 15 >> c / 4).toString(16)
                 ),
             });
-            const randomDelay = Math.floor(Math.random() * 100); 
-            return new Promise((resolve) => setTimeout(() => resolve(signInUrl, body, session), randomDelay));
+            return new Promise((resolve) => setTimeout(() => resolve(signInUrl, body, session), 100));
         })
         .then((signInUrl, body, session) => {
             return fetch(signInUrl, {

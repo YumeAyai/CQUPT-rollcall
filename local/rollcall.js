@@ -1,4 +1,5 @@
 const fs = require("fs");
+const crypto = require("crypto");
 const headers = require("./header.json");
 
 // 检查课程列表
@@ -220,6 +221,3 @@ checkCourseList().then((courseTitles) => {
     console.log(`尝试签到课程: ${courseTitle}`);
   });
 });
-
-// qrCodeSignIn("64696", "215458");
-// numericSignIn("40534","40534");
